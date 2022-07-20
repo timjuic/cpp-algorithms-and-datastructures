@@ -77,13 +77,13 @@ class DoublyListCursor {
          std::cout << "List is full!" << std::endl;
          exit(EXIT_FAILURE);
       }
-      int p = elements[empty].next;
+      int nextUnused = elements[empty].next;
       elements[empty].value = value;
       elements[empty].next = elements[e].next;
       elements[empty].prev = e;
       elements[elements[e].next].prev = empty;
       elements[e].next = empty;
-      empty = p;
+      empty = nextUnused;
    }
 
    void Delete(element e) {
@@ -91,11 +91,11 @@ class DoublyListCursor {
          std::cout << "That element doesn't exist" << std::endl;
          exit(EXIT_FAILURE);
       }
-      int p = elements[e].next;
+      int nextUnused = elements[e].next;
       elements[e].next = elements[elements[e].next].next;
       elements[elements[elements[e].next].next].prev = e;
-      elements[p].next = empty;
-      empty = p;
+      elements[nextUnused].next = empty;
+      empty = nextUnused;
    }
 
    void ChangeValue(element e, elementType newValue) {
