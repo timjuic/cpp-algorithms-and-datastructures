@@ -47,7 +47,7 @@ class Stack {
    
    void Print() {
       if (top < MAXS - 1) {
-         for (int i = top; i < MAXS; i++) {
+         for (int i = top+1; i < MAXS; i++) {
             std::cout << elements[i] << std::endl;
          }
       }
