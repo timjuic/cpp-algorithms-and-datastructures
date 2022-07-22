@@ -22,7 +22,6 @@ class List {
       noEl = 0;
    }
 
-   // Methods for getting information about the list
    bool IsEmpty() {
       return noEl == 0;
    }
@@ -35,8 +34,6 @@ class List {
       return elements[e];
    }
 
-
-   // Methods for iterating through the list
    element Next(element e) {
       if (e <= lambda) {
          std::cout << "Element with index: " << e << " doesn't exist!" << std::endl;
