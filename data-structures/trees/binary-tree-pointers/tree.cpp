@@ -26,7 +26,7 @@ int main() {
    node = tree.Root();
    tree.Delete(node);
 
-   // tree.Print();
+   tree.Print();
 
    return 0;
 }
