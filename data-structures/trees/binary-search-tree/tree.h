@@ -1,5 +1,5 @@
 #ifndef Comp
-#define Comp(a, b) (a < b ? -1 : (a == b) ? 0 : 1)
+#define Comp(a, b) (a > b ? 1 : (a == b) ? 0 : -1)
 #endif
 
 #include <iostream>
@@ -76,12 +76,12 @@ class BinarySearchTree {
             } while (next);
 
             if (Comp(p->label, x) != 0) {
-                Node *n = new Node;
-                n->left = n->right = NULL;
-                n->parent = p;
-                n->label = x;
-                if (Comp(p->label, x) == -1) p->right = n;
-                else p->left = n;
+                Node *newNode = new Node;
+                newNode->left = newNode->right = NULL;
+                newNode->parent = p;
+                newNode->label = x;
+                if (Comp(p->label, x) == -1) p->right = newNode;
+                else p->left = newNode;
             }
         }
     }
@@ -100,6 +100,7 @@ class BinarySearchTree {
                 n->label = p->label;
                 n = p;
             }
+            
             if (n->left != NULL) p = n->left;
             else p = n->right;
             if (p != NULL) p->parent = n->parent;
