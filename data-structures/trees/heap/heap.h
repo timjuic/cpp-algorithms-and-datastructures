@@ -6,6 +6,12 @@
 #define MAXH 1000
 #endif
 
+// If this variable is set to 1, heap will be max heap
+// If its set to -1, heap will be min heap
+#ifndef MIN_OR_MAX
+#define MIN_OR_MAX 1
+#endif
+
 #include <iostream>
 #include <cstdlib>
 
@@ -40,7 +46,7 @@ class Heap {
 
       elements[++numOfElements] = x;
       int n = numOfElements;
-      while (n > 1 && Comp(elements[n], elements[n / 2]) == -1) {
+      while (n > 1 && Comp(elements[n], elements[n / 2]) == MIN_OR_MAX) {
          nodeType p = elements[n / 2];
          elements[n / 2] = elements[n];
          elements[n] = p;
@@ -58,10 +64,10 @@ class Heap {
       int k;
       bool next;
       do {
-         if (2 * n + 1 <= numOfElements && Comp(elements[2 * n + 1], elements[2 * n]) == -1) k = 2 * n + 1;
+         if (2 * n + 1 <= numOfElements && Comp(elements[2 * n + 1], elements[2 * n]) == MIN_OR_MAX) k = 2 * n + 1;
          else k = 2 * n;
 
-         if (k <= numOfElements && Comp(elements[k], elements[n]) == -1) {
+         if (k <= numOfElements && Comp(elements[k], elements[n]) == MIN_OR_MAX) {
             nodeType p = elements[k];
             elements[k] = elements[n];
             elements[n] = p;
