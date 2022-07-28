@@ -8,21 +8,12 @@ void BinarySearchTreeSort(int arr[], int n) {
         tree.Insert(arr[i]);
     }
 
-    cout << tree.Max() << endl;
-
-    cout << tree.Min() << endl;
-
-    cout << "Came to print" << endl;
-
     int i = 0;
     while (!tree.IsEmpty()) {
         int b = tree.Min();
         tree.Delete(b);
         arr[i++] = b;
-        cout << "ran" << endl;
     }
-
-    cout << "Came to print" << endl;
 
     for (i = 0; i < n; i++) {
         cout << arr[i] << " ";
