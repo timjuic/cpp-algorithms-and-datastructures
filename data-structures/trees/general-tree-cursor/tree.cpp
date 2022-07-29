@@ -24,17 +24,9 @@ int main() {
     tree.CreateChild(node, 6);
     tree.CreateChild(node, 7);
 
+    tree.Print();
 
-    node = tree.Root();
-    node = tree.FirstChild(node);
-    cout << "Node: " << tree.Label(node) << endl;
-    cout << "Parent: " << tree.Parent(node) << endl;
-    cout << "before iteration" << endl;
-
-    while (tree.NextSibling(node) != tree.lambda) {
-        cout << "Node: " << tree.Label(node) << endl;
-        node = tree.NextSibling(node);
-    }
+    tree.Delete(tree.Root());
 
     return 0;
 }

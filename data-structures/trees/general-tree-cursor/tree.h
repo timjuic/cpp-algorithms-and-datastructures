@@ -140,9 +140,9 @@ class GeneralTree {
                 }
                 elements[i].sibling = elements[n].sibling;
             }
-            elements[n].sibling = empty;
-            empty = n;
         }
+        elements[n].sibling = empty;
+        empty = n;
     }
 
     private:
@@ -154,8 +154,10 @@ class GeneralTree {
 
     public:
     void Print() {
-        std::cout << this->IsEmpty() << std::endl;
-        // if (!IsEmpty()) Prnt(0);
-        std::cout << std::endl;
+        if (!IsEmpty()) {
+            std::cout << "Preorder traversal:" << std::endl;
+            Prnt(0);
+            std::cout << std::endl;
+        }
     }
 };
