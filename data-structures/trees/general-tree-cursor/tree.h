@@ -130,8 +130,8 @@ class GeneralTree {
             exit(EXIT_FAILURE);
         }
         if (elements[n].child != lambda) Del(elements[n].child);
-        if (elements[n].parent != lambda) {
-            if (elements[elements[n].parent].child == n) {
+        if (elements[n].parent != lambda) { // If node is not root
+            if (elements[elements[n].parent].child == n) { // If node is first child
                 elements[elements[n].parent].child = elements[n].sibling;
             } else {
                 int i = elements[elements[n].parent].child;
