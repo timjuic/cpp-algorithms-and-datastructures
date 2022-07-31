@@ -25,5 +25,5 @@ class Set {
         return S.Delete(x);
     }
 
-    
-}
+
+};
