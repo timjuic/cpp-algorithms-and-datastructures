@@ -28,15 +28,15 @@ class DigitalTree {
     }
 
     bool IsElement(char string[]) {
-        GeneralTree<NodeType>::node n = T.Root();
+        GeneralTree<NodeType>::node root = T.Root();
         for (int i = 0; i < strlen(string); i++) {
-            GeneralTree<NodeType>::node n1 = T.FirstChild(n);
-            while (n1 != T.lambda && T.Label(n1).letter != string[i]) {
-                n1 = T.NextSibling(n1);
+            GeneralTree<NodeType>::node currentNode = T.FirstChild(root);
+            while (currentNode != T.lambda && T.Label(currentNode).letter != string[i]) {
+                currentNode = T.NextSibling(currentNode);
             }
-            if (n1 == T.lambda) return false;
-            if (i == strlen(string) - 1) return T.Label(n1).terminal;
-            n = n1;
+            if (currentNode == T.lambda) return false;
+            if (i == strlen(string) - 1) return T.Label(currentNode).terminal;
+            root = currentNode;
         }
     }
 

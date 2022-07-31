@@ -41,9 +41,7 @@ class SortedSet {
    }
 
    bool IsElement(elementType x) {
-      int i = BinarySearch(x);
-      if (i == -1) return false;
-      else return true;
+      return BinarySearch(x) != -1;
    }
 
    void Insert(elementType x) {

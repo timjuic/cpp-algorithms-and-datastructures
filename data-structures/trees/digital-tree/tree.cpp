@@ -8,8 +8,6 @@ int main() {
     tree.Insert((char*)"text");
     tree.Insert((char*)"programming");
 
-    cout << tree.IsEmpty() << endl; // False
-
     cout << tree.IsElement((char*)"te") << endl; // True
 
     cout << tree.IsElement((char*)"programming") << endl; // True
