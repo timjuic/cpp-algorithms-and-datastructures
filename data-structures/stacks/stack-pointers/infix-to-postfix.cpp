@@ -1,4 +1,4 @@
-#include "./stack.h"
+#include "../stack/stack.h"
 #include <cstring>
 #include <cmath>
 using namespace std;
