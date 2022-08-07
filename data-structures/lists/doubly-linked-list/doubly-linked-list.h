@@ -19,7 +19,6 @@ class DoublyLinkedList {
 
    public:
    DoublyLinkedList() {
-      std::cout << "Constructor called" << std::endl;
       L = new Node;
       L->prev = L;
       L->next = L;
@@ -98,15 +97,16 @@ class DoublyLinkedList {
    void Print() {
       element current = L;
       int index = 0;
+      if (IsEmpty()) return;
       while (current->next != L) {
-         std::cout << "Position: " << index << " Value: " << this->Retrieve(current) << std::endl;
+         std::cout << this->Retrieve(current) << " ";
          current = this->Next(current);
          index++;
       }
+      std::cout << std::endl;
    }
 
    ~DoublyLinkedList() {
-      std::cout << "Destructor called" << std::endl;
       element current, k = L->prev;
       while (L != k) {
          current = L;
