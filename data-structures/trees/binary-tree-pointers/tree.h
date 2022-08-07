@@ -41,8 +41,8 @@ class BinaryTree {
       return B == lambda;
    }
 
-   node Label(node n) {
-      if (n == NULL) {
+   nodeType Label(node n) {
+      if (n == lambda) {
          std::cout << "That node doesn't exist!" << std::endl;
          exit(EXIT_FAILURE);
       }
@@ -117,13 +117,13 @@ class BinaryTree {
          exit(EXIT_FAILURE);
       }
       if (n->right != lambda) {
-         std::cout << "Can't create left node! It already exists" << std::endl;
+         std::cout << "Can't create right node! It already exists" << std::endl;
          exit(EXIT_FAILURE);
       }
       Tnode *newNode = new Tnode;
+      newNode->label = x;
       newNode->left = newNode->right = NULL;
       newNode->parent = n;
-      newNode->label = x;
       n->right = newNode;
    }
 
@@ -144,7 +144,6 @@ class BinaryTree {
    }
 
    void Print() {
-      std::cout << B->label << std::endl;
       Prnt(B);
       std::cout << std::endl;
    }
