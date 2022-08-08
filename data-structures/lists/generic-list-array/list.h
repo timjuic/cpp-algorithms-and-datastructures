@@ -60,8 +60,6 @@ class List {
       return noEl;
    }
 
-
-   // Methods for changing the list
    void Insert(element e, elementType value) {
       if (e <= lambda) {
          std::cout << "Element with index: " << e << " doesn't exist!" << std::endl;
