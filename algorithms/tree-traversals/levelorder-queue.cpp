@@ -1,5 +1,5 @@
-#include "../data-structures/trees/binary-tree-pointers/tree.h"
-#include "../data-structures/queue/queue-pointers/queue.h"
+#include "../../data-structures/trees/binary-tree-pointers/tree.h"
+#include "../../data-structures/queue/queue-pointers/queue.h"
 using namespace std;
 
 template<typename elementType>

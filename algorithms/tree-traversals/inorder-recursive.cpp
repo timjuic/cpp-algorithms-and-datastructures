@@ -1,11 +1,11 @@
-#include "../data-structures/trees/binary-tree-pointers/tree.h"
+#include "../../data-structures/trees/binary-tree-pointers/tree.h"
 using namespace std;
 
 template<typename elementType>
-void DepthFirst(BinaryTree<elementType> &tree, BinaryTree<int>::node node) {
+void InorderRec(BinaryTree<elementType> &tree, BinaryTree<int>::node node) {
+   if (tree.LeftChild(node) != tree.lambda) InorderRec(tree, tree.LeftChild(node));
    cout << tree.Label(node) << " ";
-   if (tree.LeftChild(node) != tree.lambda) DepthFirst(tree, tree.LeftChild(node));
-   if (tree.RightChild(node) != tree.lambda) DepthFirst(tree, tree.RightChild(node));
+   if (tree.RightChild(node) != tree.lambda) InorderRec(tree, tree.RightChild(node));
 }
 
 
@@ -26,7 +26,7 @@ int main() {
    node = tree.RightChild(node);
    tree.CreateRightChild(node, 8);
 
-   DepthFirst(tree, tree.Root());
+   InorderRec(tree, tree.Root());
    cout << endl;
 
    return 0;
