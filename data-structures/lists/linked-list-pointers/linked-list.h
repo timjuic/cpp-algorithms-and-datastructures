@@ -101,10 +101,11 @@ class LinkedList {
       element current = L->next;
       int index = 0;
       while (current != lambda) {
-         std::cout << "Position: " << index << " Value: " << current->value << std::endl;
+         std::cout << current->value << " ";
          current = current->next;
          index++;
       }
+      std::cout << std::endl;
    }
 
    ~LinkedList() {

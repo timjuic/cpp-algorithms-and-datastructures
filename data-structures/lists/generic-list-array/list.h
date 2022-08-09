@@ -96,4 +96,14 @@ class List {
       }
       elements[e] = newValue;
    }
+
+
+   void Print() {
+      int i = 0;
+      while (i < noEl) {
+         std::cout << elements[i] << " ";
+         i++;
+      }
+      std::cout << std::endl;
+   }
 };
