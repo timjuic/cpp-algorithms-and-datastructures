@@ -144,7 +144,6 @@ void DeleteT(GeneralTree &T, node n) {
 }
 
 
-
 void Prnt(GeneralTree &T, node n) {
    std::cout << T.elements[n].label << " ";
    if (T.elements[n].child != lambda) Prnt(T, T.elements[n].child);
