@@ -4,8 +4,8 @@ using namespace std;
 
 template<typename elementType>
 void LevelOrder(BinaryTree<elementType> &tree) {
-   Queue<BinaryTree<int>::node> queue;
-   BinaryTree<int>::node node = tree.Root();
+   typename BinaryTree<elementType>::node node = tree.Root();
+   Queue<typename BinaryTree<elementType>::node> queue;
    
    queue.Enqueue(node);
 

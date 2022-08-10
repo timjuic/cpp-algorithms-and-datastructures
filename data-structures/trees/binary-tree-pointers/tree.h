@@ -144,6 +144,7 @@ class BinaryTree {
    }
 
    void Print() {
+      if (IsEmpty()) return;
       Prnt(B);
       std::cout << std::endl;
    }
