@@ -76,4 +76,25 @@ class Heap {
          } else next = false;
       } while (next);
    }
+
+   private:
+   void Prnt(const std::string &prefix, int n, bool isLeft) {
+      if ( n <= numOfElements ) {
+         std::cout << prefix;
+
+         std::cout << (isLeft ? "├──" : "└──" );
+
+         // print the value of the node
+         std::cout << elements[n] << std::endl;
+
+         // enter the next tree level - left and right branch
+         Prnt( prefix + (isLeft ? "│   " : "    "), n * 2, true);
+         Prnt( prefix + (isLeft ? "│   " : "    "), n * 2 + 1, false);
+      } 
+   }
+
+   public:
+   void Print() {
+      Prnt("", 1, false);
+   }
 };

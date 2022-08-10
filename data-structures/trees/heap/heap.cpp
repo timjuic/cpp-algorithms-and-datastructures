@@ -12,15 +12,12 @@ int main() {
         heap.Insert(arr[i]);
     }
 
-    for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++) {
-        arr[i] = heap.RootLabel();
-        heap.DeleteRoot();
-    }
-    
-    for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
+    heap.Print();
+
+    heap.DeleteRoot();
+
+    heap.Print();
+
 
     return 0;
 }
