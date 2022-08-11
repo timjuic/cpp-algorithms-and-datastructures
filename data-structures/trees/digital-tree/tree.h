@@ -48,7 +48,9 @@ class DigitalTree {
                 n1 = T.NextSibling(n1);
             }
             if (n1 == T.lambda) {
-                NodeType p = {string[i], false};
+                NodeType p;
+                p.letter = string[i];
+                p.terminal = false;
                 T.CreateChild(n, p);
                 n1 = T.FirstChild(n);
                 while (T.Label(n1).letter != string[i]) {
@@ -82,4 +84,28 @@ class DigitalTree {
         }
     }
     
+    private:
+    void Prnt(GeneralTree<NodeType>::node n, char word[], int depth) {
+        std::cout << "Adding letter: " << T.Label(n).letter <<  " at depth: " << depth << std::endl;
+        word[depth] = T.Label(n).letter;
+
+        if (T.Label(n).terminal) {
+            std::cout << "word is: " << word << std::endl;
+        }
+
+        if (T.FirstChild(n) != T.lambda) {
+            Prnt(T.FirstChild(n), word, ++depth);
+        }
+
+        if (T.NextSibling(n) != T.lambda) {
+            Prnt(T.NextSibling(n), word, depth);
+        }
+    }
+
+    public:
+    void Print() {
+        if (IsEmpty()) return;
+        char str[100] = " ";
+        Prnt(T.Root(), str, 1);
+    }
 };
