@@ -1,31 +1,22 @@
 #include "./tree.h"
 using namespace std;
 
-void BinarySearchTreeSort(int arr[], int n) {
-    BinarySearchTree<int> tree;
-
-    for (int i = 0; i < n; i++) {
-        tree.Insert(arr[i]);
-    }
-
-    int i = 0;
-    while (!tree.IsEmpty()) {
-        int b = tree.Min();
-        tree.Delete(b);
-        arr[i++] = b;
-    }
-
-    for (i = 0; i < n; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-}
-
 
 int main() {
 
-    int arr[10] = {1,6,9,7,-3,5,2,10,8,-2};
-    BinarySearchTreeSort(arr, sizeof(arr) / sizeof(arr[0]));
+    BinarySearchTree<int> tree;
+
+    int arr[17] = {54,36,52,44,78,45,92,72,11,38,51,77,68,86,59,76,39};
+
+    for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++) {
+        tree.Insert(arr[i]);
+    }
+
+    tree.Delete(44);
+    tree.Delete(38);
+    tree.Delete(77);
+
+    tree.Print();
 
    return 0;
 }

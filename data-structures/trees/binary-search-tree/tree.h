@@ -123,7 +123,27 @@ class BinarySearchTree {
         delete n;
     }
 
+    void Prnt(const std::string &prefix, Node *node, bool isLeft) {
+        std::cout << prefix;
+
+        std::cout << (isLeft ? "├──" : "└──" );
+
+        std::cout << node->label << std::endl;
+
+        if (node->left != NULL) {
+            Prnt( prefix + (isLeft ? "│   " : "    "), node->left, true);
+        }
+        
+        if (node->right != NULL) {
+            Prnt( prefix + (isLeft ? "│   " : "    "), node->right, false);
+        }
+    }
+        
     public:
+    void Print() {
+        Prnt("", root, false);
+    }
+
     ~BinarySearchTree() {
         if (root != NULL) Del(root);
     }
