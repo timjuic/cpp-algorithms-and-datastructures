@@ -56,12 +56,12 @@ class DigitalTree {
                 while (T.Label(n1).letter != string[i]) {
                     n1 = T.NextSibling(n1);
                 }
-                n = n1;
             }
-            NodeType p = T.Label(n);
-            p.terminal = true;
-            T.ChangeLabel(n, p);
+            n = n1;
         }
+        NodeType p = T.Label(n);
+        p.terminal = true;
+        T.ChangeLabel(n, p);
     }
 
     void Delete(char string[]) {
@@ -85,27 +85,27 @@ class DigitalTree {
     }
     
     private:
-    void Prnt(GeneralTree<NodeType>::node n, char word[], int depth) {
-        std::cout << "Adding letter: " << T.Label(n).letter <<  " at depth: " << depth << std::endl;
-        word[depth] = T.Label(n).letter;
+    void Prnt(const std::string &prefix, GeneralTree<NodeType>::node n, bool isLeft) {
+         std::cout << prefix;
 
-        if (T.Label(n).terminal) {
-            std::cout << "word is: " << word << std::endl;
-        }
+         std::cout << (isLeft ? "├──" : "└──" );
 
-        if (T.FirstChild(n) != T.lambda) {
-            Prnt(T.FirstChild(n), word, ++depth);
-        }
+         // print the value of the node
+         std::cout << T.Label(n).letter << std::endl;
 
-        if (T.NextSibling(n) != T.lambda) {
-            Prnt(T.NextSibling(n), word, depth);
-        }
-    }
+         // enter the next tree level - left and right branch
+         if (T.FirstChild(n) != T.lambda) {
+            Prnt( prefix + (isLeft ? "│   " : "    "), T.FirstChild(n), true);
+         }
+         if (T.NextSibling(n) != T.lambda) {
+            Prnt( prefix + (isLeft ? "│   " : "    "), T.NextSibling(n), false);
+         }
+   }
 
     public:
     void Print() {
         if (IsEmpty()) return;
         char str[100] = " ";
-        Prnt(T.Root(), str, 1);
+        Prnt("", T.Root(), false);
     }
 };
