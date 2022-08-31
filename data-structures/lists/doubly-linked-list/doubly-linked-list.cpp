@@ -24,8 +24,6 @@ int main() {
    cout << "List nodes:" << endl;
    list.Print();
 
-   node = list.End();
-   node = list.Previous(node);
    list.Delete(node);
 
    cout << "List nodes:" << endl;

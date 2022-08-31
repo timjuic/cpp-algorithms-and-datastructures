@@ -108,10 +108,11 @@ class DoublyListCursor {
 
    void Print() {
       int index = 0;
-      std::cout << "elements: " << std::endl;
+      std::cout << "elements: " << " ";
       while (elements[index].next != 0) {
          index = elements[index].next;
-         std::cout << elements[index].value << std::endl;
+         std::cout << elements[index].value << " ";
       }
+      std::cout << std::endl;
    }
 };

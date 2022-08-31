@@ -7,8 +7,8 @@ int main() {
    LinkedList<int>::element node;
    
    cout << list.IsEmpty() << endl;
-   node = list.First();
 
+   node = list.First();
    list.Insert(node, 1);
    node = list.End();
    list.Insert(node, 2);
@@ -20,7 +20,7 @@ int main() {
 
    // Deleting all nodes
    node = list.First();
-   while (node->next != NULL) {
+   while (list.Next(node) != NULL) {
       list.Delete(node);
       node = list.First();
    }

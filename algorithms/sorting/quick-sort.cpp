@@ -2,24 +2,24 @@
 using namespace std;
 
 void QuickSort(int a[], int left, int right) {
-  int i = left;
-  int j = right;
-  int sidro = a[(left + right) / 2];
+   int i = left;
+   int j = right;
+   int sidro = a[(left + right) / 2];
 
-  while (i <= j) {
-    while (a[i] < sidro) i++;
-    while (a[j] > sidro) j--;
+   while (i <= j) {
+      while (a[i] < sidro) i++;
+      while (a[j] > sidro) j--;
 
-    if (i <= j) {
-      int spremi = a[i];
-      a[i] = a[j];
-      a[j] = spremi;
-      i = i + 1;
-      j = j - 1;
-    }
-  }
-  if (i < right) QuickSort(a, i, right);
-  if (left < j) QuickSort(a, left, j);
+      if (i <= j) {
+         int spremi = a[i];
+         a[i] = a[j];
+         a[j] = spremi;
+         i = i + 1;
+         j = j - 1;
+      }
+   }
+   if (i < right) QuickSort(a, i, right);
+   if (left < j) QuickSort(a, left, j);
 }
 
 typedef int tip;

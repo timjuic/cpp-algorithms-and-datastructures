@@ -18,7 +18,7 @@ int main() {
 
    list.Delete(list.End() - 1); // Deleting last value (5)
    
-   cout << list.IsEmpty() << endl; // false
+   cout << list.IsEmpty() << endl; // List isnt empty anymore
 
    // Iterating through all elements
    int i = list.First();
@@ -33,7 +33,7 @@ int main() {
       list.Delete(list.End() - 1);
    }
 
-   // List is now empty
+   // List is now again empty
    cout << list.IsEmpty() << endl;
 
    return 0;
