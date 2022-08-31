@@ -3,7 +3,12 @@
 using namespace std;
 
 void heapsort(int a[], int n) {
-    cout << n << endl;
+
+    for (int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+    
 
     for (int i = 2; i <= n; i++) {
         int j = i;
@@ -39,13 +44,13 @@ void heapsort(int a[], int n) {
 
     for (int i = 0; i < n; i++) {
         cout << a[i] << " ";
-        cout << endl;
     }
+    cout << endl;
 }
 
 int main() {
     int arr[9] = {1,7,5,5,3,1,2,9,10};
 
-    heapsort(arr, sizeof(arr) / sizeof(arr[0]));
+    heapsort(arr-1, sizeof(arr) / sizeof(arr[0]));
     return 0;
 }

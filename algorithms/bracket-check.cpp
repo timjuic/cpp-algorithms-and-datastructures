@@ -3,8 +3,6 @@ using namespace std;
 
 bool CheckBrackets(char string[]) {
    Stack<char> stack;
-   cout << strlen(string) << endl;
-   cout << string << endl;
 
    for (int i = 0; i < strlen(string); i++) {
       if (string[i] == '(' || string[i] == '[' || string[i] == '{') {
@@ -31,7 +29,9 @@ int main() {
    cout << "Type Expression with brackets: ";
    cin >> str;
 
-   cout << CheckBrackets(str) << endl;
+   if (CheckBrackets(str)) {
+      cout << "Brackets match" << endl;
+   } else cout << "Brackets don't match" << endl;
 
    return 0;
 }

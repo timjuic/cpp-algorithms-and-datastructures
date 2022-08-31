@@ -37,7 +37,7 @@ typename GeneralTree<nodeType>::node LowestCommonAncestor(GeneralTree<nodeType> 
          node2 = tree.Parent(node2);
       }
    }
-   cout << tree.Label(node1) << " " << tree.Label(node2) << endl;
+   
    return node1;
 }
 

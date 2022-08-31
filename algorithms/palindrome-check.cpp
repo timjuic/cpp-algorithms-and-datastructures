@@ -1,5 +1,5 @@
 #include "../data-structures/queue/queue-pointers/queue.h"
-#include "../data-structures/stack-pointers/stack.h"
+#include "../data-structures/stacks/stack-pointers/stack.h"
 #include <iostream>
 #include <cstring>
 using namespace std;
