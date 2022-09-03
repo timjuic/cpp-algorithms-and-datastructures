@@ -61,7 +61,7 @@ class List {
    }
 
    void Insert(element e, elementType value) {
-      if (e <= lambda) {
+      if (e <= lambda || e > noEl) {
          std::cout << "Element with index: " << e << " doesn't exist!" << std::endl;
          exit(EXIT_FAILURE);
       }
