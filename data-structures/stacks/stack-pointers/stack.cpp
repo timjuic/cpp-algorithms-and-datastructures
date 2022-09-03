@@ -14,6 +14,7 @@ int main() {
    stack.Print();
 
    stack.Pop();
+   stack.Pop();
 
    cout << "elements: ";
    stack.Print();

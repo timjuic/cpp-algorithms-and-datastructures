@@ -48,8 +48,9 @@ class Stack {
    void Print() {
       if (top < MAXS - 1) {
          for (int i = top+1; i < MAXS; i++) {
-            std::cout << elements[i] << std::endl;
+            std::cout << elements[i] << " ";
          }
       }
+      std::cout << std::endl;
    }
 };
