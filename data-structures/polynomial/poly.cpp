@@ -28,7 +28,8 @@ int main() {
 	int max = P.Deg() > Q.Deg() ? P.Deg() : Q.Deg();
 
 	for (int i = 0; i <= max; i++)
-	    R.ChangeCoef(i,P.Coef(i)+Q.Coef(i));
+		R.ChangeCoef(i,P.Coef(i)+Q.Coef(i));
+		
 	for (int i = R.Deg();i>=0;i--) {
 		std::cout << R.Coef(i) << "*x^" << i;
 		if (i>0) 

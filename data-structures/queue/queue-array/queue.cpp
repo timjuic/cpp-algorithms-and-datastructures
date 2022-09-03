@@ -6,7 +6,6 @@ int main() {
    Queue<int> queue;
 
    cout << queue.IsEmpty() << endl;
-   cout << endl;
 
    queue.Enqueue(1);
    queue.Enqueue(2);
@@ -22,9 +21,10 @@ int main() {
    }
 
    while (!queue2.IsEmpty()) {
-      cout << queue2.Front() << endl;
+      cout << queue2.Front() << " ";
       queue2.Dequeue();
    }
+   cout << endl;
    
 
    return 0;

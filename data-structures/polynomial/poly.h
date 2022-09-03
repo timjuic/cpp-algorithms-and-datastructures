@@ -16,7 +16,6 @@ class Poly {
       degree = -1;
    }
 
-
    bool IsNull() {
       return degree == -1;
    }
