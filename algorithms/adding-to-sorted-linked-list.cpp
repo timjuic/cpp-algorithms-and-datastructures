@@ -3,50 +3,30 @@
 using namespace std;
 
 int main() {
+  
+   int n;
+   int a;
    List<int> list;
 
-   list.Insert(0, 1);
-   list.Insert(1, 2);
-   list.Insert(2, 4);
-   list.Insert(3, 5);
-   list.Insert(4, 6);
-   list.Insert(5, 10);
-   list.Insert(6, 13);
+   cout << "N = ";
+   cin >> n;
 
-   list.Print();
-
-
-   int add;
-   cout << "Insert number to add: ";
-   cin >> add; // add = 3
-
-   int element = list.First();
-   while (add > list.Retrieve(element) || element == list.Previous(list.End())) {
-      cout << "ran" << endl;
-      element = list.Next(element);
-   }
-   cout << "ran2" << endl;
-
-   if (add > list.Retrieve(list.End())) {
-      list.Insert(element, add);
-   }
-
-   if (add == list.Retrieve(element)) {
-      int i = list.End();
-      list.Insert(i, list.Retrieve(i));
-      i--;
-      while (i != element) {
-         list.ChangeValue(i, list.Retrieve(i-1));
+   for (int i = 0; i < n; i++) {
+      List<int>::element e = list.End();
+      cout << "Insert number to add to sorted list: ";
+      cin >> a;
+      while (e != list.First() && a < list.Retrieve(list.Previous(e))) {
+         e = list.Previous(e);
       }
+      list.Insert(e, a);
    }
 
-   if (list.Retrieve(element) != add) {
-      list.Insert(element, add);
+   List<int>::element current = list.First();
+   while (current != list.End()) {
+      cout << list.Retrieve(current) << " ";
+      current = list.Next(current);
    }
-
-   
-   list.Print();
-
+   cout << endl;
 
    return 0;
 }
