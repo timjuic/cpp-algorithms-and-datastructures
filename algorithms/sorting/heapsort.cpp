@@ -1,14 +1,30 @@
+#ifndef MIN_OR_MAX
+#define MIN_OR_MAX -1
+#endif
 #include "../../data-structures/trees/heap/heap.h"
 #include <iostream>
 using namespace std;
 
+
+
 void heapsort(int a[], int n) {
+    Heap<int> heap;
+    for (int i = 0; i < n; i++) {
+        heap.Insert(a[i]);
+    }
+    for (int i = 0; i < n; i++) {
+        a[i] = heap.RootLabel();
+        heap.DeleteRoot();
+    }
 
     for (int i = 0; i < n; i++) {
         cout << a[i] << " ";
     }
     cout << endl;
-    
+}
+
+
+void heapsortInPlace(int a[], int n) {
 
     for (int i = 2; i <= n; i++) {
         int j = i;
@@ -42,15 +58,24 @@ void heapsort(int a[], int n) {
         } while (next);
     }
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i <= n; i++) {
         cout << a[i] << " ";
     }
     cout << endl;
 }
 
-int main() {
-    int arr[9] = {1,7,5,5,3,1,2,9,10};
 
-    heapsort(arr-1, sizeof(arr) / sizeof(arr[0]));
+int main() {
+    int arr[9] = {1,7,5,5,3,1,2,9,-5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    heapsortInPlace(arr-1, n);
+    heapsort(arr, n);
+
     return 0;
 }

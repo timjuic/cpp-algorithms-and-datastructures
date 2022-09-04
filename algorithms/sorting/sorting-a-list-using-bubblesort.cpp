@@ -30,10 +30,7 @@ int main() {
       }
    }
 
-
-
    list.Print();
    
-
    return 0;
 }
